@@ -10,11 +10,11 @@ const isAndroid = (): boolean => {
   return !isWindows() && userAgent.indexOf('android') !== -1;
 };
 
-export const getWhatsAppBaseUrl = (): string => {
-  let link = `https://wa.me/`;
+export const getWhatsAppBaseUrl = (number?: number): string => {
+  let link = `https://wa.me/${number}`;
   if (isAndroid()) {
     // use this link for android devices
-    link = `whatsapp://send`;
+    link = `whatsapp://send/${number}`;
   }
   return link;
 };
