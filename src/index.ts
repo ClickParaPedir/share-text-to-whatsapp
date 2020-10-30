@@ -1,7 +1,7 @@
 import { getWhatsAppBaseUrl, urlEncodeText } from './util';
 
 export const shareTextToWhatsApp = (text: string, number: number): void => {
-  window.location.href = `${getWhatsAppBaseUrl()}?phone=${number}{text=${urlEncodeText(text)}`;
+  window.location.href = `${getWhatsAppBaseUrl()}?phone=${number}&text=${urlEncodeText(text)}`;
 };
 
 export const getWhatsAppClickToChatLink = (text: string): string => {
